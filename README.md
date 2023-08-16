@@ -1,2 +1,2 @@
-# handmade-hero
-Follow Along for Handmade Hero Project 
+## Intro
+Following along the awesome project [Handmade Hero](https://handmadehero.org).
