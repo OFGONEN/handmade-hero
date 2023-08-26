@@ -27,6 +27,21 @@ LRESULT CALLBACK MainWindowCallback(
             OutputDebugStringA("VM_ACTIVATEAPP\n");
         } break;
 
+        case WM_PAINT:
+        {
+            PAINTSTRUCT Paint;
+            HDC DeviceContext = BeginPaint(Window, &Paint);
+
+            int X = Paint.rcPaint.left;
+            int Y = Paint.rcPaint.top;
+            int Width = Paint.rcPaint.right - Paint.rcPaint.left;
+            int Height = Paint.rcPaint.bottom - Paint.rcPaint.top;
+            PatBlt(DeviceContext, X, Y, Width, Height, BLACKNESS);
+
+            EndPaint(Window, &Paint);
+
+        } break;
+
         default:
         {
             // OutputDebugStringA("default\n");
